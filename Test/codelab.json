@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-08-29T21:57:42-04:00",
+  "id": "Test",
+  "duration": 8,
+  "title": "Test",
+  "authors": "Zarin",
+  "summary": "Test",
+  "source": "codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "sample"
+  ],
+  "tags": [
+    "medium"
+  ],
+  "feedback": "https://zarin.io",
+  "url": "Test"
+}

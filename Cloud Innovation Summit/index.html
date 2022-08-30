@@ -1,0 +1,142 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Cloud Innovation Summit</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Cloud Innovation Summit"
+                  title="Cloud Innovation Summit"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <h2 is-upgraded>HANDS-ON LAB:</h2>
+<h2 is-upgraded>IBM CLOUD SECURITY AND COMPLIANCE CENTER</h2>
+<h2 is-upgraded>IBM CLOUD INNOVATION SUMMIT</h2>
+<h2 is-upgraded>SEPTEMBER 20TH, 2022</h2>
+<p>Welcome to the Security and Compliance Center hands-on lab! Today, you&#39;ll have a chance to work with a live IBM Cloud environment and illustrate the functionality of the IBM Cloud Security and Compliance Center.</p>
+<p>Phase 1 is the portion of this document that will encompass the hands-on steps. During this section, please don&#39;t hesitate to stop and ask questions if you get stuck. We hope you&#39;re able to get through all of it in the time allotted today, but if you don&#39;t, we&#39;ll keep the environment live for a few days afterwards so that you can continue your learning after this session.</p>
+<p>We&#39;ll start with a brief overview of SCC (Phase 0), then we&#39;ll scan an IBM Cloud environment (Phase 1). This will give us a compliance score, and will identify portions of our environment that are either vulnerable from a security perspective, or non-compliant and leaving us susceptible to fines (Phase 1.1).</p>
+<p>Then, we&#39;ll make improvements (remediate) and changes to our environment to improve our security and compliance posture (Phase 1.2). We&#39;ll rescan the environment through SCC (Phase 1.3) and see how much we were able to improve (1.4).</p>
+<p>Lastly, we&#39;ll review existing Azure scans (Phase 2) and IBM Cloud Satellite scans (Phase 3) to learn about different types of environments SCC is capable of scanning. Finally, we&#39;ll wrap everything up and discuss next steps (Phase 4).</p>
+<p>Let&#39;s get started!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Phase 0 – Explore the Architecture and the Security and Compliance Center" duration="0">
+        <h2 is-upgraded>IBM Cloud Security and Compliance Center: Overview and Key Definitions</h2>
+<p>The IBM Cloud Security and Compliance Center (SCC) helps customers achieve continuous security and compliance of their on-premises and Cloud resources (including IBM Cloud, Azure, AWS, and GCP). The SCC helps customers prevent misconfigurations in their environment that could result in significant fines stemming from violating government regulations. In today&#39;s world, security threats are constantly changing, and the SCC helps customers mitigate incoming security threats by ensuring their environment adheres to key security configurations.</p>
+<h2 is-upgraded>Collector:</h2>
+<p>Think of a collector as the machine executing the scan of your environment. It&#39;s effectively a computer executing the program that compares your environment against a set of controls, and outputs the compliance report.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/658e6df1a71e0b2b.png"></p>
+<p>Reference: https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-collector</p>
+<h2 is-upgraded>Credentials:</h2>
+<p>The collector requires authorization to access your resources and run its validations. Configuring credentials accomplishes exactly this. For IBM Cloud scans, this is simply an API key.</p>
+<h2 is-upgraded>Scope:</h2>
+<p>A scope is the environment that you&#39;re electing to scan. For example, your scope could be an IBM Cloud account, or it could be limited to a specific resource group.</p>
+<h2 is-upgraded>Goal:</h2>
+<p>A goal is the desired state/configuration for your environment.</p>
+<p>A goal is used to determine if your environment is meeting an industry control.</p>
+<p>Industry controls are rules and regulations that an organization must adhere to.</p>
+<p>*Note: we&#39;ll be exploring goals later in the lab.</p>
+<h2 is-upgraded>Profile:</h2>
+<p>A profile is a collection of industry controls.</p>
+<p>Profiles are designed make your life even easier – by defining the controls that your organization is focused on.</p>
+<p>And, even better: using our predefined profiles saves you the effort of creating this definition on your own. We have many predefined profiles available, and if there is not currently a profile that matches your needs perfectly, please contact your IBM account representative who can provide additional support.</p>
+<p>*Note: we&#39;ll be exploring various predefined profiles later in the lab as well.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Phase 0.1 – Confirm Your Resource Group" duration="0">
+        <p>To start the lab, your web browser should already be logged into the IBM Cloud portal: https://cloud.ibm.com.</p>
+<p>If for some reason this isn&#39;t the case, go ahead and navigate to that link and notify your instructor who will provide you with login credentials.</p>
+<p>The first piece of information that we need to complete this lab is our unique resource group. We&#39;ll reference this resource group a few times throughout the lab. A resource group is a logical grouping of resources into a virtual &#34;bucket&#34; to make it easier to manage our resources. We&#39;ll talk a bit more about resource groups later on, but for now, you need to make sure you know which resource group you&#39;ll be using for today&#39;s lab.</p>
+<p>To confirm your resource group, in the top left of the IBM Cloud Portal, click on the following icon to use the flyout menu:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/9f520eb7a80b4596.png"></p>
+<p>Then click on &#34;Resource List&#34; from the flyout menu.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/8490c2f4e7bd8dc1.png"></p>
+<p>Take a moment to review the resources that you have access to. You can expand the &#34;VPC Infrastructure&#34; and &#34;Storage&#34; sections.</p>
+<p>You&#39;ll notice that you have access to your own:</p>
+<ul>
+<li>Cloud Object Storage (COS) instance</li>
+<li>Virtual Private Cloud <ul>
+<li>Your own isolated network address space in IBM Cloud</li>
+</ul>
+</li>
+<li>Virtual Server Instance <ul>
+<li>Your own virtual machine hosted in IBM Cloud</li>
+</ul>
+</li>
+<li>Other VPC resources <ul>
+<li>Including a Network Security Group, and Access Control List, which we&#39;ll talk about more later.</li>
+</ul>
+</li>
+</ul>
+<p>For right now, take note of the resource group that these resources are located in. Your resource group will be named something like: &#34;rg&#34; and a number between 1 and 30. For example, the resource group in the screenshot below is named &#34;rg30&#34; – make sure you remember your resource group name for a couple of the steps in this lab!</p>
+<p class="image-container"><img alt="alt-text-here" src="img/fe0ba0e97e6bf549.png"></p>
+<p>If you forget your resource group at any point, you can navigate back to the &#34;Resource List,&#34; or you can quickly click on the icon in the top right to reference your username, which will correspond to your resource group name!</p>
+<p>For example, &#34;lab user30&#34; is the user account in the screenshot below, and lab user30&#39;s resource group is &#34;rg30.&#34; We&#39;ve created a unique user for your, and the number in your username corresponds to your resource group name as well.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/d0ad6838b484ab1f.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Phase 0.2 – Navigate to the Security and Compliance Center and Explore" duration="0">
+        <p>Now, let&#39;s navigate to the Security and Compliance Center, which can be accomplished a few different ways. We&#39;ll simply select &#34;Security and Compliance&#34; from the flyout menu on the left side of the Cloud portal:</p>
+<p>Click this icon to open the flyout menu:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/c98dc1fb45c28668.png"></p>
+<p>Then select &#34;Security and Compliance:&#34;</p>
+<p class="image-container"><img alt="alt-text-here" src="img/88465b9b16dd53b0.png"></p>
+<p>Take a moment to familiarize yourself with the SCC navigation pane on the left side of your screen. Feel free explore the &#34;Dashboard&#34; option. Your dashboard may initially have less data than the screenshot below!</p>
+<p class="image-container"><img alt="alt-text-here" src="img/3fe65d569498580.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Phase 1 – Scan the IBM Cloud Environment" duration="0">
+        <p>Now that you&#39;ve have a chance to briefly explore the IBM Cloud portal, this next phase will involve a series of steps to conduct an initial security and compliance scan of our environment. We need to understand the current state of our environment – are there any security issues in our IBM Cloud environment that could leave our organization vulnerable to a breach? Are there any misconfigurations in our Cloud resources that could result in us having to pay a fine? We&#39;ll find all of that out by scanning our IBM Cloud environment in via the Security and Compliance Center.</p>
+<p>Start by navigating to &#34;Scopes&#34; in the Security and Compliance Center. You can find &#34;Scopes&#34; under the &#34;Configure&#34; drop-down menu on the left-hand side of your screen, as shown in the screenshot below.</p>
+<p>Once you&#39;re there, go ahead and click &#34;Create&#34; to launch the scope creation wizard.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/1a338e7dee776eca.png"></p>
+<p>Enter a name for your scope (and optionally, you can add a description). For the purposes of this lab, you may want to include your initials in the name of your scope to make it easier to identify in the lab environment. For example, I might name my scope &#34;alt-scope&#34; or similar.</p>
+<p>Note: for complex environments, it&#39;s advised to use strategic naming conventions and to supply descriptions for your scopes.</p>
+<p>Once you&#39;ve done that, click &#34;next.&#34;</p>
+<p class="image-container"><img alt="alt-text-here" src="img/ba22b8a3eff72acf.png"></p>
+<p>In the &#34;target&#34; blade of the wizard, select &#34;IBM Cloud&#34; in the &#34;Environment&#34; drop-down menu, and select &#34;my_scc_credentials&#34; from the &#34;Credentials&#34; drop-down menu.</p>
+<p>Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). For IBM Cloud environments, creating credentials is done by supplying an IBM Cloud API Key to SCC. We don&#39;t need to complete that step since the credentials are already created!</p>
+<p>Once you&#39;ve selected &#34;IBM Cloud&#34; as your environment and &#34;my_scc_credentials&#34; for your credential, click &#34;Next.&#34;</p>
+<p class="image-container"><img alt="alt-text-here" src="img/b5d4d25d0ef57c67.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

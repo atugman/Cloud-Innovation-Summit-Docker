@@ -1,0 +1,23 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-08-29T22:36:55-04:00",
+  "id": "Cloud Innovation Summit",
+  "duration": 0,
+  "title": "Cloud Innovation Summit",
+  "summary": "Cloud Innovation Summit",
+  "source": "codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "sample"
+  ],
+  "tags": [
+    "medium"
+  ],
+  "url": "Cloud Innovation Summit"
+}
