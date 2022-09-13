@@ -407,7 +407,112 @@
       </google-codelab-step>
     
       <google-codelab-step label="Phase 2 – Scan the Microsoft Azure Environment" duration="0">
-        
+        <p>To save you a bit of time, we&#39;ve already executed the scan of our Microsoft Azure environment. This will save you plenty of time waiting for scans to execute, and you can focus on the SCC offering value proposition.</p>
+<p>Let&#39;s start by reviewing a preconfigured profile that SCC offers for Azure environments.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/4d8cee2906063686.png"></p>
+<p>Type in &#34;Azure&#34; into the search bar, and click on the &#34;CIS Azure Foundations Benchmark 1.1&#34; profile:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/abcee8876ad46a96.png"></p>
+<p>Take a moment to click through and explore the profile. Once again, you can view each control and each goal that comprises that control, and you can sort/group the profile however you&#39;d like!</p>
+<p class="image-container"><img alt="alt-text-here" src="img/7ce2a4721b71caff.png"></p>
+<p>Next, let&#39;s navigate directly to the validation results (from the Azure scan that we ran for you) within SCC:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/5973150e11d7b536.png"></p>
+<p>Feel free to select one of the scans that used an Azure-specific predefined profile in SCC.</p>
+<p>To make it easier to locate the Azure scans, feel free to type &#34;Azure&#34; into the search bar, as shown in the screenshot below.</p>
+<p>The name of the scan and the &#34;Profile&#34; column will indicate it&#39;s an Azure scan, and that it uses the &#34;CIS Azure Foundations Benchmark 1.1&#34; preconfigured profile. For example, the scan name in the screenshot below is &#34;azure-main-CISAzureFound...&#34;</p>
+<p class="image-container"><img alt="alt-text-here" src="img/4be7488e0795c5a.png"></p>
+<p>SCC is unique in the market in its ability to provide a compliance score for multiple Cloud environments right here in the same tool.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/a8b479f2a495642f.png"></p>
+<p>Explore the scan further. Thinking back to our previous exploration techniques, remember that you can explore the most critical security vulnerabilities, which might be interesting to explore here.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/c05b44f0247920f1.png"><img alt="alt-text-here" src="img/89552853b3bbce68.png"></p>
+<p>Alternatively, explore the list view of the Azure scan to succinctly view each control and relevant resources:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/c224f81720b760c9.png"></p>
+<p>Lastly, click on &#34;Remediation script,&#34; which will download a sample set of Azure CLI commands that you can use to quickly implement remediation steps to secure your environment.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/664636c62115a7cf.png"></p>
+<p>Next, make sure all of the boxes are checked, which can be easily done by checking the top box next to &#34;ID,&#34; as shown in the screenshot below.</p>
+<p>Then, click &#34;Download.&#34;</p>
+<p class="image-container"><img alt="alt-text-here" src="img/f0dc07ef2339a0c.png"></p>
+<p>The script should only take a moment or two to download. When you see the download appear in the bottom left corner of your browser, you can simply click on it to open it in the default text editor.</p>
+<p>Note: The remediation script takes the form of a .txt file, so don&#39;t worry about inadvertently launching any scripts by merely clicking on the download.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/5159841c208f1d20.png"></p>
+<p>You&#39;ll notice a series of scripts that can help you quickly remediate your Azure environment.</p>
+<p>SCC provides a single pane of glass to evaluate the security and compliance posture of multi-cloud environments, delivered by IBM. There isn&#39;t another Cloud provider that can provide the level of multi-cloud visibility in a single pane of glass that SCC provides, all while saving customers time with predefined industry-specific profiles that we&#39;ve created.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Phase 3 – Scan the IBM Cloud Satellite Environment" duration="0">
+        <p>IBM Cloud Satellite provides customers with the ability to run IBM Cloud services on their own infrastructure, whether that&#39;s on-premises, at the edge, or even in a different public Cloud than IBM, such as Azure, AWS, or GCP. This provides customers with the ability to consistently deploy and manage their applications regardless of where they are running!</p>
+<p>As you&#39;ve likely noticed throughout this lab, the Security and Compliance Center can scan and evaluate a number of different environments. IBM Cloud Satellite is no exception – SCC can also scan an IBM Cloud Satellite environment and provide validation results. This means that while leveraging the consistency and portability of container-based application development via IBM Cloud Satellite, the Security and Compliance Center can still encompass these environments into its single pane of glass.</p>
+<p>Furthermore, SCC has a specific ROKS integration, as well as a predefined profile designed specifically to evaluate the security and compliance of ROKS clusters. Let&#39;s start by exploring this profile.</p>
+<p>Once again, navigate back to &#34;Profiles&#34; within SCC. Type &#34;ROKS&#34; into the search bar, and click on the resulting profile – ROKS OCP4 Tailored Profile v1.0:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/ad7a93d46d5b1377.png"></p>
+<p>As we&#39;ve done with previous profiles, explore the various controls that are preconfigured in this profile, and the goals that make up each control!</p>
+<p class="image-container"><img alt="alt-text-here" src="img/242e907838e5be63.png"></p>
+<p>We&#39;ve already created a Satellite cluster and scanned it for you to save you time. Below is a quick glance at the Satellite cluster itself before we review the scan results.</p>
+<p>Note: For the purposes of this lab, you won&#39;t have direct visibility into the Satellite cluster via the IBM Cloud portal, but we hope the screenshots below provide some insight into the architecture. This was actually done to ensure the lab was easy to use and that you were only able to see the Cloud resources that you&#39;d be directly working with.</p>
+<p>Note: For the purposes of this lab, the Satellite cluster is actually hosted on IBM Cloud for testing. However, the scans would run exactly the same way regardless of where the Satellite cluster is hosted.</p>
+<p>Satellite Cluster Architecture:</p>
+<p>Locations:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/a2c806f1af85f8c1.png"></p>
+<p>Overview:</p>
+<p class="image-container"><img alt="alt-text-here" src="img/3236b3062622ec8f.png"></p>
+<p>Hosts (3 control plane, 3 data plane):</p>
+<p class="image-container"><img alt="alt-text-here" src="img/cc3c7794b1244d95.png"></p>
+<p>ROKS view (3 worker nodes in our data plane):</p>
+<p class="image-container"><img alt="alt-text-here" src="img/fddbb325ddef43c1.png"></p>
+<p>Now, let&#39;s navigate back to our validation results in SCC one last time! Once you&#39;re there, to easily find the IBM Cloud Satellite scan results, type &#34;os&#34; into the search bar to help you filter for the scans of the Satellite environment.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/45ad3d52fe348074.png"></p>
+<p>Notice the scans that have more than one profile (indicated by &#34;+1&#34;). We&#39;ve actually scanned the Satellite environment against two profiles: the &#34;IBM Cloud for Financial Services v0.4.0&#34; profile that we&#39;ve used throughout this lab, as well as the customized ROKS profile that you explored at the beginning of Phase 3: &#34;ROKS OCP4 Tailored Profile v1.0.&#34;</p>
+<p>Click on the first scan in the list (after typing in &#34;os&#34; into the search box), and notice the ability to switch between the two.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/a031406ed8943f0b.png"></p>
+<p>Take note of how the controls and goals from the ROKS profile are also scanned against our Satellite cluster!</p>
+<p class="image-container"><img alt="alt-text-here" src="img/34c6a6a8fc3d98ac.png"></p>
+<p>Explore the scan at your leisure. In the screenshots below, we&#39;ll hone in on the failed control, and the associated goals.</p>
+<p class="image-container"><img alt="alt-text-here" src="img/1520eb2c36a76c5.png"><img alt="alt-text-here" src="img/3c1134b3fc0a4e60.png"><img alt="alt-text-here" src="img/67321596f493ac1d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Phase 4 – Conclusion" duration="0">
+        <p>Congratulations (again)!! That concludes our IBM Cloud Security and Compliance Center hands-on lab.</p>
+<p>Please reach out to your instructor for any questions you have about SCC or this lab. We&#39;ll be happy to provide any support that you may need in terms of completing the lab, as well as the IBM Cloud Security and Compliance Center as a whole!</p>
+<p>Let&#39;s take a quick moment to reflect on what we accomplished today:</p>
+<ul>
+<li>High-level overview of SCC and key definitions</li>
+<li>Key capabilities and integrations of SCC (discussed throughout the exercise)</li>
+<li>Key value propositions of SCC (discussed throughout the exercise)</li>
+<li>Reviewed the IBM Cloud environment/architecture</li>
+<li>Discussed key network security configurations on IBM Cloud</li>
+<li>Navigated to the SCC and scanned the IBM Cloud environment, which required us to: <ul>
+<li>Create a Scope, which was the portion of our environment that we need to scan</li>
+<li>Leverage existing SCC credentials to authorize the scan to run</li>
+<li>Leverage an existing collector, which is the infrastructure where the scan runs</li>
+<li>Discover our Cloud resources by configuring and executing a &#34;Discovery&#34; scan</li>
+<li>Adjust our scope to only include our resource group, which was the individual lab environment that you each had access to</li>
+<li>Perform a validation scan of our resource group using the preconfigured &#34;IBM Cloud for Financial Services&#34; profile</li>
+</ul>
+</li>
+<li>Further explored SCC to solidify our understanding of key definitions, including profiles, controls and goals</li>
+<li>Reviewed the results of our IBM Cloud environment scan, including our compliance score</li>
+<li>Reviewed the most critical vulnerabilities and goal failures in our IBM Cloud environment scan</li>
+<li>Remediated 3 of the most critical failures from our initial IBM Cloud scan, including: <ul>
+<li>Restricting our Cloud Object Storage bucket to only allow access to the data from our machine&#39;s IP address</li>
+<li>Ensuring our Virtual Server Instance was only accessible via SSH from our machine (instead of from the entire internet) by updating its security group rules</li>
+<li>Ensuring our whole network (VPC) was only accessible via SSH from our machine (instead of from the entire internet) by updating the Access Control List (ACL) for our VPC</li>
+</ul>
+</li>
+<li>Rescanned our IBM Cloud environment after implementing remediation steps <ul>
+<li>Noticed an increase in our compliance score</li>
+<li>Noticed the three goals that we remediated passed our latest scan</li>
+<li>Used Drift view to visualize how much our environment improved on the second scan</li>
+</ul>
+</li>
+<li>Reviewed Microsoft Azure profiles in SCC</li>
+<li>Reviewed an existing Microsoft Azure SCC scan</li>
+<li>Reviewed our IBM Cloud Satellite environment</li>
+<li>Reviewed an IBM Cloud Satellite scan that leveraged multiple profiles, including the &#34;ROKS OCP4 Tailored Profile v1.0&#34; profile</li>
+</ul>
+
 
       </google-codelab-step>
     
