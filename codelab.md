@@ -5,11 +5,11 @@ tags: medium
 status: Published
 
 
-# Cloud Innovation Summit
+# IBM Cloud Innovation Summit: Security & Compliance Center - Hands-on Lab
 <!-- ------------------------ -->
 ## Introduction
 
-### HANDS-ON LAB: 
+### HANDS-ON LAB:
 
 ### IBM CLOUD SECURITY AND COMPLIANCE CENTER 
 
@@ -18,7 +18,7 @@ status: Published
 ### OCTOBER 12TH, 2022 
 
 
-Welcome to the Security and Compliance Center hands-on lab! Today, you’ll have a chance to work with a live IBM Cloud environment and illustrate the functionality of the IBM Cloud Security and Compliance Center. 
+*Welcome to the Security and Compliance Center hands-on lab! Today, you’ll have a chance to work with a live IBM Cloud environment and illustrate the functionality of the IBM Cloud Security and Compliance Center.*
 
  
 
