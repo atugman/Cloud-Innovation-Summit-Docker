@@ -802,6 +802,8 @@ Explore the scan at your leisure. In the screenshots below, we’ll hone in on t
 ![alt-text-here](assets/3-11.png)
 ![alt-text-here](assets/3-12.png)
 
+Well, it’s safe to say that SecureBank’s new CISO Kali Linux, and new Lead Security Engineer Gene Hackman can sleep easy at night now, knowing that the IBM Cloud Security and Compliance Center is continually assessing their Multi-Cloud environments and modern architectures that are helping them deliver software faster and stay differentiated in the market. Through a single pane of glass, SecureBank can assess and improve on their Cloud security configurations to help secure their environments and prevent fines! All while focusing on results for their business and saving the time and effort that would have been required to build out these sorts of security validations manually.  
+
 ## Phase 4 – Conclusion
 
 Congratulations (again)!! That concludes our IBM Cloud Security and Compliance Center hands-on lab.
