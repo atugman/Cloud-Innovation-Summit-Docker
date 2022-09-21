@@ -44,25 +44,23 @@ Let’s get started!
 
 ## Phase 0 - Meet the Customer: SecureBank, Ltd 
 
-Throughout this lab, we’ll make reference to a fictitious customer, SecureBank, Ltd. SecureBank is a local bank that strives to provide a modern and unique experience to their customers. They may be small, but they they’re ambitious, and they have lofty goals when it comes to testing and releasing new software in the form of new features for their customers. They’re in the process of modernizing some of their key software applications, including their main mobile banking application, used by the vast majority of their customers. 
-
+Throughout this lab, we’ll make reference to a fictitious customer, SecureBank, Ltd. SecureBank is a local bank that strives to provide a modern and unique experience to their customers. They may be small, but they they’re ambitious, and they have lofty goals when it comes to testing and releasing new software in the form of new features for their customers. They’re in the process of modernizing some of their key software applications, including their main mobile banking application, used by the vast majority of their customers.
  
 
-Like most banks, insurance companies, and other financial institutions, they are subject to various compliance regulations and are audited regularly. However, when it comes to maintaining their security posture and key security configurations in their Cloud environments, they tend to take a laissez faire approach. Their engineering and development teams are so focused on releasing new features that security is typically an afterthought. They’ve hired top application developers and DevOps engineers, but their skillsets in the realm of security are lackluster. 
-
+Like most banks, insurance companies, and other financial institutions, they are subject to various compliance regulations and are audited regularly. However, when it comes to maintaining their security posture and security configurations in their Cloud environments, they tend to take a laissez faire approach. Their engineering and development teams are focused on releasing new features and security is typically a lower priority. They’ve hired top application developers and DevOps engineers, but their skillsets in the realm of security are lackluster.
  
 
-Recently, they’ve been hit with some hefty fines from the SEC for a lack of compliance for several controls. SecureBank recently hired a new Chief Information Security Officer (CISO), as well as a new Lead Security Engineer whose primary goal is to embark on a holistic review of the security configurations in their Cloud infrastructure and make sure everything is up to code, so to speak.  
-
+Recently, they’ve been subject to some hefty fines from the SEC for a lack of compliance for several controls. SecureBank recently hired a new Chief Information Security Officer (CISO), as well as a new Lead Security Engineer whose primary goal is to embark on a holistic review of the security configurations in their Cloud infrastructure and make sure everything is up to code, so to speak. 
  
+![alt-text-here](assets/intro-character1.png)
+Kali Linux, Chief Information Security Officer (CISO) 
 
-Kalin Ux, Chief Information Security Officer (CISO) 
-
+![alt-text-here](assets/intro-character2.png)
 Gene Hackman, Lead Security Engineer 
 
- 
+To help them maintain and evaluate their security posture to avoid future fines, SecureBank has begun evaluating the IBM Cloud Security and Compliance Center. They’ve started off by conducting preliminary research, exploration, and solidifying their understanding of key SCC concepts. 
 
-SecureBank is evaluating the IBM Cloud Security and Compliance Center to help them maintain their security posture. 
+Let's join them!
 
 ## Phase 0.1 – Explore the Architecture and the Security and Compliance Center
 
@@ -70,8 +68,7 @@ SecureBank is evaluating the IBM Cloud Security and Compliance Center to help th
 
  
 
-The IBM Cloud Security and Compliance Center (SCC) helps customers achieve continuous security and compliance of their on-premises and Cloud resources (including IBM Cloud, Azure, AWS, and GCP). The SCC helps customers prevent misconfigurations in their environment that could result in significant fines stemming from violating government regulations. In today’s world, security threats are constantly changing, and the SCC helps customers mitigate incoming security threats by ensuring their environment adheres to key security configurations. 
-
+The IBM Cloud Security and Compliance Center (SCC) helps customers like SecureBank achieve continuous security and compliance of their on-premises and Cloud resources (including IBM Cloud, Azure, AWS, and GCP). SCC helps prevent misconfigurations in their environments that could result in significant fines stemming from violating government regulations. In today’s world, security threats are constantly changing, and SCC could very well help SecureBank mitigate incoming security threats by ensuring their environment adheres to key security configurations. 
  
 
 ### Collector: 
@@ -130,8 +127,7 @@ Profiles are designed make your life even easier – by defining the controls th
 
  
 
-And, even better: using our predefined profiles saves you the effort of creating this definition on your own. We have many predefined profiles available, and if there is not currently a profile that matches your needs perfectly, please contact your IBM account representative who can provide additional support. 
-
+And, even better: using IBM’s predefined profiles would save SecureBank the effort of creating this definition on their own. We have many predefined profiles available, and if there is not currently a profile that matches your needs perfectly, please contact your IBM account representative who can provide additional support. 
  
 
 *Note: we’ll be exploring various predefined profiles later in the lab as well. 
@@ -139,9 +135,11 @@ And, even better: using our predefined profiles saves you the effort of creating
 <!-- ------------------------ -->
 ## Phase 0.2 – Confirm Your Resource Group
 
+SecureBank took a step further and worked with their IBM account team to setup a Cloud sandbox where they could start to gain hands-on experience with the IBM Cloud Security and Compliance Center. We're going to do the same thing here today!
+
 To start the lab, your web browser should already be logged into the IBM Cloud portal: https://cloud.ibm.com.
 
-If for some reason this isn’t the case, go ahead and navigate to that link and notify your instructor who will provide you with login credentials.
+If for some reason this isn’t the case, go ahead and navigate to the link above and notify your instructor who will provide you with login credentials and help you get setup to start the lab. 
 
 The first piece of information that we need to complete this lab is our unique resource group. We’ll reference this resource group a few times throughout the lab. A resource group is a logical grouping of resources into a virtual “bucket” to make it easier to manage our resources. We’ll talk a bit more about resource groups later on, but for now, you need to make sure you know which resource group you’ll be using for today’s lab.
 
@@ -195,7 +193,7 @@ Take a moment to familiarize yourself with the SCC navigation pane on the left s
 <!-- ------------------------ -->
 ## Phase 1 – Scan the IBM Cloud Environment
 
-Now that you’ve have a chance to briefly explore the IBM Cloud portal, this next phase will involve a series of steps to conduct an initial security and compliance scan of our environment. We need to understand the current state of our environment – are there any security issues in our IBM Cloud environment that could leave our organization vulnerable to a breach? Are there any misconfigurations in our Cloud resources that could result in us having to pay a fine? We’ll find all of that out by scanning our IBM Cloud environment in via the Security and Compliance Center. 
+Now that you’ve have a chance to briefly explore the IBM Cloud portal, this next phase will involve a series of steps to conduct an initial security and compliance scan of our environment. SecureBank needs to understand the current state of their environment – are there any security issues in their IBM Cloud environment that could leave their organization vulnerable to a breach? Are there any misconfigurations in the Cloud resources that could result in them having to pay a fine? We’ll find all of that out by scanning the provided IBM Cloud environment in via the Security and Compliance Center.  
 
 Start by navigating to “Scopes” in the Security and Compliance Center. You can find “Scopes” under the “Configure” drop-down menu on the left-hand side of your screen, as shown in the screenshot below.
 
@@ -213,7 +211,7 @@ Once you’ve done that, click “next.”
 
 In the “target” blade of the wizard, select “IBM Cloud” in the “Environment” drop-down menu, and select “my_scc_credentials” from the “Credentials” drop-down menu. 
 
-Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). For IBM Cloud environments, creating credentials is done by supplying an IBM Cloud API Key to SCC. We don’t need to complete that step since the credentials are already created!
+Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). To reiterate, creating SCC credentials for IBM Cloud environments is done by supplying an IBM Cloud API Key. We don’t need to complete that step since the credentials are already created! 
 
 Once you’ve selected “IBM Cloud” as your environment and “my_scc_credentials” for your credential, click “Next.”
 
@@ -306,7 +304,9 @@ Use the following configurations for your on-demand scan:
 
 Click “Create.”
 
-The scan will take a few minutes to complete, likely about 8 or 10 minutes. But while we wait, we can perform other Cloud management tasks. Let's continue our exploration of the Security and Compliance Center by drilling into the available goals and profiles.
+The scan will take a few minutes to complete, likely about 8 or 10 minutes. But while we wait, we can perform other Cloud management tasks, so let's continue our exploration of the Security and Compliance Center. 
+
+For the purpose of this lab, we selected the “IBM Cloud for Financial Services v.0.4.0” profile to scan our environment against. This profile meets the needs of many of our customers, including SecureBank. Let’s take a moment to drill deeper into this profile and what it’s accomplishing for SecureBank!
 
 ## Review Available Predefined Profiles
 
