@@ -48,14 +48,15 @@
 <p>Recently, they&#39;ve been subject to some hefty fines from the SEC for a lack of compliance for several controls. SecureBank recently hired a new Chief Information Security Officer (CISO), as well as a new Lead Security Engineer whose primary goal is to embark on a holistic review of the security configurations in their Cloud infrastructure and make sure everything is up to code, so to speak.</p>
 <p><img alt="alt-text-here" src="img/b475df197388191b.png"> Kali Linux, Chief Information Security Officer (CISO)</p>
 <p><img alt="alt-text-here" src="img/1efc2aa00778dfed.png"> Gene Hackman, Lead Security Engineer</p>
-<p>To help them maintain and evaluate their security posture to avoid future fines, SecureBank has begun evaluating the IBM Cloud Security and Compliance Center. They&#39;ve started off by conducting preliminary research, exploration, and understanding of key SCC concepts.</p>
+<p>To help them maintain and evaluate their security posture to avoid future fines, SecureBank has begun evaluating the IBM Cloud Security and Compliance Center. They&#39;ve started off by conducting preliminary research, exploration, and solidifying their understanding of key SCC concepts.</p>
+<p>Let&#39;s join them!</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Phase 0.1 – Explore the Architecture and the Security and Compliance Center" duration="0">
         <h2 is-upgraded>IBM Cloud Security and Compliance Center: Overview and Key Definitions</h2>
-<p>The IBM Cloud Security and Compliance Center (SCC) helps customers achieve continuous security and compliance of their on-premises and Cloud resources (including IBM Cloud, Azure, AWS, and GCP). The SCC helps customers prevent misconfigurations in their environment that could result in significant fines stemming from violating government regulations. In today&#39;s world, security threats are constantly changing, and the SCC helps customers mitigate incoming security threats by ensuring their environment adheres to key security configurations.</p>
+<p>The IBM Cloud Security and Compliance Center (SCC) helps customers like SecureBank achieve continuous security and compliance of their on-premises and Cloud resources (including IBM Cloud, Azure, AWS, and GCP). SCC helps prevent misconfigurations in their environments that could result in significant fines stemming from violating government regulations. In today&#39;s world, security threats are constantly changing, and SCC could very well help SecureBank mitigate incoming security threats by ensuring their environment adheres to key security configurations.</p>
 <h2 is-upgraded>Collector:</h2>
 <p>Think of a collector as the machine executing the scan of your environment. It&#39;s effectively a computer executing the program that compares your environment against a set of controls, and outputs the compliance report.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/658e6df1a71e0b2b.png"></p>
@@ -72,15 +73,16 @@
 <h2 is-upgraded>Profile:</h2>
 <p>A profile is a collection of industry controls.</p>
 <p>Profiles are designed make your life even easier – by defining the controls that your organization is focused on.</p>
-<p>And, even better: using our predefined profiles saves you the effort of creating this definition on your own. We have many predefined profiles available, and if there is not currently a profile that matches your needs perfectly, please contact your IBM account representative who can provide additional support.</p>
+<p>And, even better: using IBM&#39;s predefined profiles would save SecureBank the effort of creating this definition on their own. We have many predefined profiles available, and if there is not currently a profile that matches your needs perfectly, please contact your IBM account representative who can provide additional support.</p>
 <p>*Note: we&#39;ll be exploring various predefined profiles later in the lab as well.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Phase 0.2 – Confirm Your Resource Group" duration="0">
-        <p>To start the lab, your web browser should already be logged into the IBM Cloud portal: https://cloud.ibm.com.</p>
-<p>If for some reason this isn&#39;t the case, go ahead and navigate to that link and notify your instructor who will provide you with login credentials.</p>
+        <p>SecureBank took a step further and worked with their IBM account team to setup a Cloud sandbox where they could start to gain hands-on experience with the IBM Cloud Security and Compliance Center. We&#39;re going to do the same thing here today!</p>
+<p>To start the lab, your web browser should already be logged into the IBM Cloud portal: https://cloud.ibm.com.</p>
+<p>If for some reason this isn&#39;t the case, go ahead and navigate to the link above and notify your instructor who will provide you with login credentials and help you get setup to start the lab.</p>
 <p>The first piece of information that we need to complete this lab is our unique resource group. We&#39;ll reference this resource group a few times throughout the lab. A resource group is a logical grouping of resources into a virtual &#34;bucket&#34; to make it easier to manage our resources. We&#39;ll talk a bit more about resource groups later on, but for now, you need to make sure you know which resource group you&#39;ll be using for today&#39;s lab.</p>
 <p>To confirm your resource group, in the top left of the IBM Cloud Portal, click on the following icon to use the flyout menu:</p>
 <p class="image-container"><img alt="alt-text-here" src="img/9f520eb7a80b4596.png"></p>
@@ -125,7 +127,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Phase 1 – Scan the IBM Cloud Environment" duration="0">
-        <p>Now that you&#39;ve have a chance to briefly explore the IBM Cloud portal, this next phase will involve a series of steps to conduct an initial security and compliance scan of our environment. We need to understand the current state of our environment – are there any security issues in our IBM Cloud environment that could leave our organization vulnerable to a breach? Are there any misconfigurations in our Cloud resources that could result in us having to pay a fine? We&#39;ll find all of that out by scanning our IBM Cloud environment in via the Security and Compliance Center.</p>
+        <p>Now that you&#39;ve have a chance to briefly explore the IBM Cloud portal, this next phase will involve a series of steps to conduct an initial security and compliance scan of our environment. SecureBank needs to understand the current state of their environment – are there any security issues in their IBM Cloud environment that could leave their organization vulnerable to a breach? Are there any misconfigurations in the Cloud resources that could result in them having to pay a fine? We&#39;ll find all of that out by scanning the provided IBM Cloud environment in via the Security and Compliance Center.</p>
 <p>Start by navigating to &#34;Scopes&#34; in the Security and Compliance Center. You can find &#34;Scopes&#34; under the &#34;Configure&#34; drop-down menu on the left-hand side of your screen, as shown in the screenshot below.</p>
 <p>Once you&#39;re there, go ahead and click &#34;Create&#34; to launch the scope creation wizard.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/1a338e7dee776eca.png"></p>
@@ -134,7 +136,7 @@
 <p>Once you&#39;ve done that, click &#34;next.&#34;</p>
 <p class="image-container"><img alt="alt-text-here" src="img/ba22b8a3eff72acf.png"></p>
 <p>In the &#34;target&#34; blade of the wizard, select &#34;IBM Cloud&#34; in the &#34;Environment&#34; drop-down menu, and select &#34;my_scc_credentials&#34; from the &#34;Credentials&#34; drop-down menu.</p>
-<p>Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). For IBM Cloud environments, creating credentials is done by supplying an IBM Cloud API Key to SCC. We don&#39;t need to complete that step since the credentials are already created!</p>
+<p>Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). To reiterate, creating SCC credentials for IBM Cloud environments is done by supplying an IBM Cloud API Key. We don&#39;t need to complete that step since the credentials are already created!</p>
 <p>Once you&#39;ve selected &#34;IBM Cloud&#34; as your environment and &#34;my_scc_credentials&#34; for your credential, click &#34;Next.&#34;</p>
 <p class="image-container"><img alt="alt-text-here" src="img/b5d4d25d0ef57c67.png"></p>
 <p>In the &#34;Collectors&#34; blade, you&#39;ll notice several different options.</p>
@@ -189,7 +191,8 @@
 </ul>
 <p class="image-container"><img alt="alt-text-here" src="img/a0a9c9de6310d97e.png"></p>
 <p>Click &#34;Create.&#34;</p>
-<p>The scan will take a few minutes to complete, likely about 8 or 10 minutes. But while we wait, we can perform other Cloud management tasks. Let&#39;s continue our exploration of the Security and Compliance Center by drilling into the available goals and profiles.</p>
+<p>The scan will take a few minutes to complete, likely about 8 or 10 minutes. But while we wait, we can perform other Cloud management tasks, so let&#39;s continue our exploration of the Security and Compliance Center.</p>
+<p>For the purpose of this lab, we selected the &#34;IBM Cloud for Financial Services v.0.4.0&#34; profile to scan our environment against. This profile meets the needs of many of our customers, including SecureBank. Let&#39;s take a moment to drill deeper into this profile and what it&#39;s accomplishing for SecureBank!</p>
 
 
       </google-codelab-step>
