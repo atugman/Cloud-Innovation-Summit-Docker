@@ -365,7 +365,7 @@ Lastly, make a note of your overall compliance score. Your compliance score may 
 
 ![alt-text-here](assets/1-27.png)
 
-Security and compliance are ongoing and everchanging tasks for organizations. It’s not easy for most organizations to keep track of, much less implement all of the security measures necessary to avoid cyberattacks and costly fines. This is precisely why the Security and Compliance Center provides you with visibility into the severity level of failed controls – companies need a starting point when it comes to understanding where they should be focusing their efforts in terms of implementing security and compliance measures. 
+Security and compliance are ongoing and everchanging tasks for organizations like SecureBank. It’s not easy for most organizations to keep track of, much less implement all of the security measures necessary to avoid cyberattacks and costly fines. This is precisely why the Security and Compliance Center provides you with visibility into the severity level of failed controls – companies need a starting point when it comes to understanding where they should be focusing their efforts in terms of implementing security and compliance measures. Using SCC, SecureBank can quickly and easily move on from their laissez faire approach to maintaining a security posture and prevent future fines. 
 
 Let’s start by reviewing our most critical failed controls. We can accomplish this by clicking on the dark red bar of the “Failures” graph to view of list of all critical failed controls, as shown in the screenshot below. 
 
@@ -625,7 +625,7 @@ This scan will take approximately 8 minutes to complete given the number of user
 
 ## Phase 1.4 – Review the Latest Scan and Evaluate Drift
 
-Now that the scan has completed, let’s see if we were able to improve the security posture of our environment and prepare for compliance reporting.
+Now that the scan has completed, let’s see if we were able to improve the security posture of our environment and prepare for compliance reporting. Thinking back to SecureBank, this is a great chance to see the impact that our team new members (Kali Linux and Gene Hackman) have had in their short tenures as CISO and Lead Security Engineer. 
 
 Navigate back to the (latest) validation results:
 
@@ -671,13 +671,17 @@ Finally, using the drift view in SCC, we make it easy to review how your environ
 
 ![alt-text-here](assets/1-70.png)
 
-Congratulations! You've completed the hands-on portion of this lab!
+Congratulations! If you’ve made it this far, you've completed the primary hands-on portion of this lab! 
 
-The remainder of this document is further exploration of SCC to highlight a few additional features and value propositions.
+Take a moment to consult your instructor. Show them your Drift View from the most recent step and make sure you grab some IBM SWAG!
+
+The remainder of this document is further exploration of SCC to highlight a few additional, unique features. 
 
 ## Phase 2 – Scan the Microsoft Azure Environment
 
-To save you a bit of time, we’ve already executed the scan of our Microsoft Azure environment. This will save you plenty of time waiting for scans to execute, and you can focus on the SCC offering value proposition.
+SecureBank is a Multi-Cloud customer, and is looking for a solution that will provide them a single pane of glass for their Multi-Cloud security posture. During their evaluation of the IBM Cloud Security and Compliance Center, their IBM account team helped them explore the Azure integration of SCC. Let's explore this with them using the provided Azure environment!
+
+To save you a bit of time, we’ve already executed the scan of our Microsoft Azure environment. This will save you plenty of time waiting for scans to execute, and you can focus on learning more about the SCC offering itself. Kalin and Gene at SecureBank are thrilled at the processes they’ve streamlined and the ease in which they’re updating their security configurations and avoiding fines in their Multi-Cloud environments!
 
 Let’s start by reviewing a preconfigured profile that SCC offers for Azure environments. 
 
@@ -740,6 +744,8 @@ SCC provides a single pane of glass to evaluate the security and compliance post
 
 IBM Cloud Satellite provides customers with the ability to run IBM Cloud services on their own infrastructure, whether that’s on-premises, at the edge, or even in a different public Cloud than IBM, such as Azure, AWS, or GCP. This provides customers with the ability to consistently deploy and manage their applications regardless of where they are running! 
 
+As mentioned previously, SecureBank provides customers with a modern banking experience and focuses on the speed in which new features are delivered to market. This is a huge differentiator for them against their competitors. A big part of why they’re able to deliver new features faster is their microservices architecture, which they run on Red Hat OpenShift on multiple Clouds, including IBM Cloud and Microsoft Azure. OpenShift provides a consistent orchestration platform that ensures their software can be delivered and managed consistently regardless of where the infrastructure is hosted! 
+
 As you’ve likely noticed throughout this lab, the Security and Compliance Center can scan and evaluate a number of different environments. IBM Cloud Satellite is no exception – SCC can also scan an IBM Cloud Satellite environment and provide validation results. This means that while leveraging the consistency and portability of container-based application development via IBM Cloud Satellite, the Security and Compliance Center can still encompass these environments into its single pane of glass.
 
 Furthermore, SCC has a specific ROKS integration, as well as a predefined profile designed specifically to evaluate the security and compliance of ROKS clusters. Let’s start by exploring this profile.
@@ -782,7 +788,7 @@ Now, let’s navigate back to our validation results in SCC one last time! Once 
 
 Notice the scans that have more than one profile (indicated by “+1”). We’ve actually scanned the Satellite environment against two profiles: the “IBM Cloud for Financial Services v0.4.0” profile that we’ve used throughout this lab, as well as the customized ROKS profile that you explored at the beginning of Phase 3: “ROKS OCP4 Tailored Profile v1.0.”
 
-Click on the first scan in the list (after typing in “os” into the search box), and notice the ability to switch between the two.
+Click on the first scan in the list (after typing in “os” into the search box), and notice the ability to switch between the two profiles.
 
 ![alt-text-here](assets/3-8.png)
 

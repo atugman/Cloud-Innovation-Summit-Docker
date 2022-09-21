@@ -229,7 +229,7 @@
 <p>Note: The full validation results (including the &#34;Failures&#34; box in the screenshot below) may take a few seconds to load.</p>
 <p>Lastly, make a note of your overall compliance score. Your compliance score may differ from the score shown in the screenshot below.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/40d30c7603b7c025.png"></p>
-<p>Security and compliance are ongoing and everchanging tasks for organizations. It&#39;s not easy for most organizations to keep track of, much less implement all of the security measures necessary to avoid cyberattacks and costly fines. This is precisely why the Security and Compliance Center provides you with visibility into the severity level of failed controls – companies need a starting point when it comes to understanding where they should be focusing their efforts in terms of implementing security and compliance measures.</p>
+<p>Security and compliance are ongoing and everchanging tasks for organizations like SecureBank. It&#39;s not easy for most organizations to keep track of, much less implement all of the security measures necessary to avoid cyberattacks and costly fines. This is precisely why the Security and Compliance Center provides you with visibility into the severity level of failed controls – companies need a starting point when it comes to understanding where they should be focusing their efforts in terms of implementing security and compliance measures. Using SCC, SecureBank can quickly and easily move on from their laissez faire approach to maintaining a security posture and prevent future fines.</p>
 <p>Let&#39;s start by reviewing our most critical failed controls. We can accomplish this by clicking on the dark red bar of the &#34;Failures&#34; graph to view of list of all critical failed controls, as shown in the screenshot below.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/5832e701f9cc48cc.png"></p>
 <p>Click on control ID: &#34;AC-4&#34; (Information Flow Enforcement).</p>
@@ -377,7 +377,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Phase 1.4 – Review the Latest Scan and Evaluate Drift" duration="0">
-        <p>Now that the scan has completed, let&#39;s see if we were able to improve the security posture of our environment and prepare for compliance reporting.</p>
+        <p>Now that the scan has completed, let&#39;s see if we were able to improve the security posture of our environment and prepare for compliance reporting. Thinking back to SecureBank, this is a great chance to see the impact that our team new members (Kali Linux and Gene Hackman) have had in their short tenures as CISO and Lead Security Engineer.</p>
 <p>Navigate back to the (latest) validation results:</p>
 <p class="image-container"><img alt="alt-text-here" src="img/cb0fa61d97f76001.png"></p>
 <p>Select your scan from the list. The name of your scan may differ from the screenshot below.</p>
@@ -403,14 +403,16 @@
 <p class="image-container"><img alt="alt-text-here" src="img/f8e568f5c8f85b3a.png"></p>
 <p>Finally, using the drift view in SCC, we make it easy to review how your environment has improved over time based on your remediation steps. You can go ahead and click out of the AC-4 control, then and click on the drift view icon (as shown in the screenshot below) for a visual representation of the improvements we made between the scans we ran in this lab. Customers find tremendous value in being able to show progress over time – notice how much we improved after addressing only a few goals!</p>
 <p class="image-container"><img alt="alt-text-here" src="img/c54355676134ba18.png"></p>
-<p>Congratulations! You&#39;ve completed the hands-on portion of this lab!</p>
-<p>The remainder of this document is further exploration of SCC to highlight a few additional features and value propositions.</p>
+<p>Congratulations! If you&#39;ve made it this far, you&#39;ve completed the primary hands-on portion of this lab!</p>
+<p>Take a moment to consult your instructor. Show them your Drift View from the most recent step and make sure you grab some IBM SWAG!</p>
+<p>The remainder of this document is further exploration of SCC to highlight a few additional, unique features.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Phase 2 – Scan the Microsoft Azure Environment" duration="0">
-        <p>To save you a bit of time, we&#39;ve already executed the scan of our Microsoft Azure environment. This will save you plenty of time waiting for scans to execute, and you can focus on the SCC offering value proposition.</p>
+        <p>SecureBank is a Multi-Cloud customer, and is looking for a solution that will provide them a single pane of glass for their Multi-Cloud security posture. During their evaluation of the IBM Cloud Security and Compliance Center, their IBM account team helped them explore the Azure integration of SCC. Let&#39;s explore this with them using the provided Azure environment!</p>
+<p>To save you a bit of time, we&#39;ve already executed the scan of our Microsoft Azure environment. This will save you plenty of time waiting for scans to execute, and you can focus on learning more about the SCC offering itself. Kalin and Gene at SecureBank are thrilled at the processes they&#39;ve streamlined and the ease in which they&#39;re updating their security configurations and avoiding fines in their Multi-Cloud environments!</p>
 <p>Let&#39;s start by reviewing a preconfigured profile that SCC offers for Azure environments.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/4d8cee2906063686.png"></p>
 <p>Type in &#34;Azure&#34; into the search bar, and click on the &#34;CIS Azure Foundations Benchmark 1.1&#34; profile:</p>
@@ -445,6 +447,7 @@
     
       <google-codelab-step label="Phase 3 – Scan the IBM Cloud Satellite Environment" duration="0">
         <p>IBM Cloud Satellite provides customers with the ability to run IBM Cloud services on their own infrastructure, whether that&#39;s on-premises, at the edge, or even in a different public Cloud than IBM, such as Azure, AWS, or GCP. This provides customers with the ability to consistently deploy and manage their applications regardless of where they are running!</p>
+<p>As mentioned previously, SecureBank provides customers with a modern banking experience and focuses on the speed in which new features are delivered to market. This is a huge differentiator for them against their competitors. A big part of why they&#39;re able to deliver new features faster is their microservices architecture, which they run on Red Hat OpenShift on multiple Clouds, including IBM Cloud and Microsoft Azure. OpenShift provides a consistent orchestration platform that ensures their software can be delivered and managed consistently regardless of where the infrastructure is hosted!</p>
 <p>As you&#39;ve likely noticed throughout this lab, the Security and Compliance Center can scan and evaluate a number of different environments. IBM Cloud Satellite is no exception – SCC can also scan an IBM Cloud Satellite environment and provide validation results. This means that while leveraging the consistency and portability of container-based application development via IBM Cloud Satellite, the Security and Compliance Center can still encompass these environments into its single pane of glass.</p>
 <p>Furthermore, SCC has a specific ROKS integration, as well as a predefined profile designed specifically to evaluate the security and compliance of ROKS clusters. Let&#39;s start by exploring this profile.</p>
 <p>Once again, navigate back to &#34;Profiles&#34; within SCC. Type &#34;ROKS&#34; into the search bar, and click on the resulting profile – ROKS OCP4 Tailored Profile v1.0:</p>
@@ -466,7 +469,7 @@
 <p>Now, let&#39;s navigate back to our validation results in SCC one last time! Once you&#39;re there, to easily find the IBM Cloud Satellite scan results, type &#34;os&#34; into the search bar to help you filter for the scans of the Satellite environment.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/45ad3d52fe348074.png"></p>
 <p>Notice the scans that have more than one profile (indicated by &#34;+1&#34;). We&#39;ve actually scanned the Satellite environment against two profiles: the &#34;IBM Cloud for Financial Services v0.4.0&#34; profile that we&#39;ve used throughout this lab, as well as the customized ROKS profile that you explored at the beginning of Phase 3: &#34;ROKS OCP4 Tailored Profile v1.0.&#34;</p>
-<p>Click on the first scan in the list (after typing in &#34;os&#34; into the search box), and notice the ability to switch between the two.</p>
+<p>Click on the first scan in the list (after typing in &#34;os&#34; into the search box), and notice the ability to switch between the two profiles.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/a031406ed8943f0b.png"></p>
 <p>Take note of how the controls and goals from the ROKS profile are also scanned against our Satellite cluster!</p>
 <p class="image-container"><img alt="alt-text-here" src="img/34c6a6a8fc3d98ac.png"></p>
