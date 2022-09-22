@@ -193,7 +193,7 @@ _Then select “Security and Compliance:”_
 ![alt-text-here](assets/0.2-3.png)
 
 <!-- ------------------------ -->
-## Scan the IBM Cloud Environment (Phase 1)
+## Discover the IBM Cloud Resources (Phase 1)
 
 Now that you’ve have a chance to briefly explore the IBM Cloud portal, this next phase will involve a series of steps to conduct an initial security and compliance scan of our environment. SecureBank needs to understand the current state of their environment – are there any security issues in their IBM Cloud environment that could leave their organization vulnerable to a breach? Are there any misconfigurations in the Cloud resources that could result in them having to pay a fine? We’ll find all of that out by scanning the provided IBM Cloud environment in via the Security and Compliance Center.  
 
@@ -203,9 +203,9 @@ Once you’re there, go ahead and click “Create” to launch the scope creatio
 
 ![alt-text-here](assets/1-1.png)
 
-Enter a name for your scope (and optionally, you can add a description). For the purposes of this lab, you may want to include your initials in the name of your scope to make it easier to identify in the lab environment. For example, I might name my scope “alt-scope” or similar.
+Enter a name for your scope (and optionally, you can add a description). For the purposes of this lab, you may want to **include your initials** in the name of your scope to make it easier to identify in the lab environment. For example, I might name my scope “alt-scope” or similar.
 
-Note: for complex environments, it’s advised to use strategic naming conventions and to supply descriptions for your scopes. 
+_Note: for complex environments, it’s advised to use strategic naming conventions and to supply descriptions for your scopes._
 
 Once you’ve done that, click “next.”
 
@@ -213,7 +213,7 @@ Once you’ve done that, click “next.”
 
 In the “target” blade of the wizard, select “IBM Cloud” in the “Environment” drop-down menu, and select “my_scc_credentials” from the “Credentials” drop-down menu. 
 
-Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). To reiterate, creating SCC credentials for IBM Cloud environments is done by supplying an IBM Cloud API Key. We don’t need to complete that step since the credentials are already created! 
+_Note: For the purposes of this lab, the credentials that your SCC scan needs to run have already been created for you to use (my_scc_credentials). To reiterate, creating SCC credentials for IBM Cloud environments is done by supplying an IBM Cloud API Key. We don’t need to complete that step since the credentials are already created!_
 
 Once you’ve selected “IBM Cloud” as your environment and “my_scc_credentials” for your credential, click “Next.”
 
@@ -221,11 +221,12 @@ Once you’ve selected “IBM Cloud” as your environment and “my_scc_credent
 
 In the “Collectors” blade, you’ll notice several different options. 
 
-Select the collector that aligns with your unique resource group that you identified in the beginning of this lab. You can confirm the collector that you should select based on the name of the collector, or the description. For example, earlier in the lab, we noted that my unique resource group was “rg30.” This means that I should select the last collector shown in the screenshot below, the collector named “8collector-rg29-rg32" because my resource group is between rg29 and rg32. 
+### Select the collector that aligns with your unique resource group that you identified in the beginning of this lab. 
+You can confirm the collector that you should select based on the name of the collector, or the description. For example, earlier in the lab, we noted that my unique resource group was “rg30.” This means that I should select the last collector shown in the screenshot below, the collector named “8collector-rg29-rg32" because my resource group is between rg29 and rg32. 
 
 ![alt-text-here](assets/1-4.png)
 
-Note: SCC offers 1 IBM managed collector per Cloud account. This means that IBM is managing the server that is responsible for executing the scan against the environment. This saves customers time and resources and makes it even easier to begin using SCC. This managed collector will satisfy the needs of many customers. Advanced users also have the option to manually create a collector by running a provided script on a virtual machine that they manage and/or host themselves. This is useful for customers who are scanning on-premises environments or scanning many different environments. That's actually what we’ve done for today’s lab – we’re using several collectors that we’ve created for you manually to better distribute the computing workload of all of the scans that customers are running today!
+_Note: SCC offers 1 IBM managed collector per Cloud account. This means that IBM is managing the server that is responsible for executing the scan against the environment. This saves customers time and resources and makes it even easier to begin using SCC. This managed collector will satisfy the needs of many customers. Advanced users also have the option to manually create a collector by running a provided script on a virtual machine that they manage and/or host themselves. This is useful for customers who are scanning on-premises environments or scanning many different environments. That's actually what we’ve done for today’s lab – we’re using several collectors that we’ve created for you manually to better distribute the computing workload of all of the scans that customers are running today!_
 
 Once you’ve selected the appropriate collector based on your individualized resource group, go ahead and click “Next” to proceed to the “Scan” blade.
 
@@ -235,7 +236,7 @@ In the scan blade, you’ll be filling out a few configurations for your scan, a
     - We recommend including using your initials as part of your naming convention for your scan here as well.
     - For example, “alt-scan” could be the name of my scan
     - Optionally you may add a description, but this is not required.
--	For “Scan type,” select “Discovery”
+-	For “Scan type,” select **“Discovery”**
 -	The “Profile” option will be blank (since we chose “Discovery” for scan type)
 -	For “Frequency,” leave this set to 1 day
 -	Configure the scan to end “after a number of occurrences,” and change the value to “1” occurrence
@@ -247,7 +248,7 @@ Once your scan matches this configuration in the screenshot above, go ahead and 
 
 This will present each of the options that you’ve selected throughout the scope creation wizard. Below is a screenshot of what yours should look like – go ahead and click “Create” once everything looks good!
 
-Note: The name of your collector may differ from the one in the screenshot below.
+_Note: The name of your collector may differ from the one in the screenshot below._
 
 ![alt-text-here](assets/1-7.png)
 ![alt-text-here](assets/1-8.png)
@@ -258,7 +259,7 @@ Once you click “Create,” you’ll receive a notice that the scan has started
 
 You’ll then notice that the scan has started – your screen should indicate that discovery is in process, and that the collector is activating with green progress bars. Don’t worry that your inventory says it is currently empty, that will soon be updated! 
 
-Note: The name of your collector may differ from the one in the screenshot below.
+_Note: The name of your collector may differ from the one in the screenshot below._
 
 ![alt-text-here](assets/1-10.png)
 
@@ -266,32 +267,36 @@ This discovery process should take approximately 3-5 minutes to run.
 
 While we wait for this process to complete, let’s take a moment to ask any questions that you may have. If you weren’t able to complete any of the previous tasks, please let your instructor know! Otherwise, feel free to explore the Cloud portal for another moment or two, or refresh your coffee!
 
-Now, let’s navigate back to SCC. You can easily monitor the progress of your scan by navigating back to “Scopes,” and viewing the “Scan status” column. You’ll see “Discovery completed” in this column when we’re ready to proceed with the next step. There is also an option to refresh the status, feel free to use this while the scan is not yet complete.
+## Scan the IBM Cloud Environment (Phase 1.0)
+
+Now, let’s navigate back to SCC. You can easily monitor the progress of your scan by _navigating back to “Scopes,”_ and viewing the “Scan status” column. You’ll see “Discovery completed” in this column when we’re ready to proceed with the next step. There is also an option to refresh the status, feel free to use this while the scan is not yet complete.
 
 ![alt-text-here](assets/1-11.png)
 
 Once the discovery is complete, click into your scope, and select the option to edit your inventory:
 
 Click on your scope:
+
 ![alt-text-here](assets/1-12.png)
 
 Edit inventory:
+
 ![alt-text-here](assets/1-13.png)
 
-Using the drop-down, update the fields so that only your resource group (that you identified in a previous step) is selected. You can uncheck all of the boxes by clicking the “Account” box at the top, and then expanding the drop-down menu to reselect the box next to your resource group. This step is very important to completing the lab! This ensures that your scan will not take too long to complete.
+Using the drop-down, update the fields so that **only your resource group** (that you identified in a previous step) is selected. You can uncheck all of the boxes by clicking the “Account” box at the top, and then expanding the drop-down menu to reselect the box next to your resource group. **This step is very important to completing the lab! This ensures that your scan will not take too long to complete.**
 
 ![alt-text-here](assets/1-14.png)
 ![alt-text-here](assets/1-15.png)
 
-Note: in case you’ve forgotten your resource group, remember that you can navigate to your Resource List to confirm it!
+_Note: in case you’ve forgotten your resource group, remember that you can navigate to your Resource List to confirm it!_
 
-Remember that a resource group is a logical grouping of resources into virtual “bucket.” The resource group only contains metadata about your resources and makes it easy to manage resources collectively. For today’s lab, you only have access to Cloud resources that are within your resource group!
+_Remember that a resource group is a logical grouping of resources into virtual “bucket.” The resource group only contains metadata about your resources and makes it easy to manage resources collectively. For today’s lab, you only have access to Cloud resources that are within your resource group!_
 
 Once again, your inventory should look something like the screenshot below, but with your resource group selected. Go ahead and click “Save” once you’re ready!
 
 ![alt-text-here](assets/1-16.png)
 
-Note: Referring back to the definition of scopes, part of the power of IBM Cloud’s Security and Compliance Center is the ability to assess different environments (or portions of your Cloud accounts) against different controls. Many of our customers have resources in different regions and countries, meaning that their resources in varying locations are subject to equally varying controls and regulations. These customers leverage many different scopes to scan their environments accordingly.
+_Note: Referring back to the definition of scopes, part of the power of IBM Cloud’s Security and Compliance Center is the ability to assess different environments (or portions of your Cloud accounts) against different controls. Many of our customers have resources in different regions and countries, meaning that their resources in varying locations are subject to equally varying controls and regulations. These customers leverage many different scopes to scan their environments accordingly._
 
 Once you’ve saved your scope to include only your resource group, select “On-demand scan” from the “Actions” drop-down menu in the top right of your screen.
 
@@ -300,7 +305,7 @@ Once you’ve saved your scope to include only your resource group, select “On
 Use the following configurations for your on-demand scan:
 -	Scan type: Validation
 -	Profile: IBM Cloud for Financial Services v.0.4.0
--	Integrations: Not Enabled
+-	Integrations: **Not Enabled**
 
 ![alt-text-here](assets/1-18.png)
 
@@ -335,7 +340,7 @@ Explore the various predefined profiles available, and drill into one or two tha
 
 ![alt-text-here](assets/1-22.png)
 
-Example: IBM Cloud for Financial Services v0.4.0
+_Example: IBM Cloud for Financial Services v0.4.0_
 
 ![alt-text-here](assets/1-23.png)
 
@@ -347,7 +352,7 @@ This should give you an idea of the power of preconfigured profiles! Recalling t
 
 Now, let’s check back in on the results of our scan.
 
-## Phase 1.1 – Review the Validation Results
+## Review the Validation Results (Phase 1.1)
 
 Our validation results should be available now. In the Security and Compliance blade on the left side of your screen, select “Validation Results” under the “Assess” drop-down menu.
 
@@ -359,11 +364,11 @@ It might be easiest to search for your scan using the search bar. If you used yo
 
 ![alt-text-here](assets/1-26.png)
 
-Once you click on your validation results, you’ll be presented with an overview of the outcome of your scan. This provides you with initial insights into how well your environment fared against the IBM Cloud Security Best Practices profile. You’ll be able to see a breakdown of passing controls, failed controls, and other controls that were either not applicable or were not able to be performed. Lastly, we’ll provide you with a breakdown of the severity level of each failed control: critical, high, medium, or low.
+Once you click on your validation results, you’ll be presented with an overview of the outcome of your scan. This provides you with initial insights into how well your environment fared against the IBM Cloud Security Best Practices profile. You’ll be able to see a breakdown of **passing controls, failed controls,** and other controls that were either not applicable or were not able to be performed. Lastly, we’ll provide you with a breakdown of the severity level of each failed control: **critical, high, medium, or low.**
 
-Note: The full validation results (including the “Failures” box in the screenshot below) may take a few seconds to load.
+_Note: The full validation results (including the “Failures” box in the screenshot below) may take a few seconds to load._
 
-Lastly, make a note of your overall compliance score. Your compliance score may differ from the score shown in the screenshot below.
+Lastly, **make a note of your overall compliance score.** Your compliance score may differ from the score shown in the screenshot below.
 
 ![alt-text-here](assets/1-27.png)
 
@@ -377,23 +382,23 @@ Click on control ID: “AC-4” (Information Flow Enforcement).
 
 ![alt-text-here](assets/1-29.png)
 
-During the next phase of our lab, we’re going to focus on remediating a few goals within the AC-4 Control: Information Flow Enablement. 
+During the next phase of our lab, we’re going to focus on remediating a few goals within the AC-4 Control: **Information Flow Enablement.**
 
 Note that each failed goal will be red in our results. But, if we’re able to remediate these and implement a proper configuration, they will be green on the next scan!
 
-Note: Remembering back to our definitions again – a control is a governmental regulation requiring many financial services customers to adhere to certain security measures to protect consumer information. A series of goals will be associated with a given control – each goal is a specific configuration. Customers should strive to pass every goal associated with the controls that they are required to adhere to.
+_Note: Remembering back to our definitions again – a control is a governmental regulation requiring many financial services customers to adhere to certain security measures to protect consumer information. A series of goals will be associated with a given control – each goal is a specific configuration. Customers should strive to pass every goal associated with the controls that they are required to adhere to._
 
 So, we’re going to work on remediating the following goals within the AC-4 control:
 
-- Goal ID: 3000107 – Check whether Cloud Object Storage network access is restricted to a specific IP range
-- Goal ID: 3000441 – Check whether Virtual Private Cloud (VPC) network access control lists don’t allow ingress from 0.0.0.0/0 to SSH port
-- Goal ID: 3000445 – Check whether Security Groups for VPC doesn’t allow SSH for the default security group
+- **Goal ID: 3000107** – Check whether Cloud Object Storage network access is restricted to a specific IP range
+- **Goal ID: 3000441** – Check whether Virtual Private Cloud (VPC) network access control lists don’t allow ingress from 0.0.0.0/0 to SSH port
+- **Goal ID: 3000445** – Check whether Security Groups for VPC doesn’t allow SSH for the default security group
 
 These goals are shown in more detail in the screenshots below, notice again how these are highlighted in red to indicate the goal was failed.
 
 ![alt-text-here](assets/1-30.png)
 
-*Scroll down to find the additional controls that we’re focusing on (ID: 3000441 and 3000445):
+_*Scroll down to find the additional controls that we’re focusing on (ID: 3000441 and 3000445):_
 
 ![alt-text-here](assets/1-31.png)
 
@@ -401,27 +406,27 @@ The Security and Compliance Center enables you to easily drill into each failed 
 
 Click into each of these three failed controls to view more details about each failure, and to see the impacted resources. 
 
-Note: You don’t need to memorize the names of the impacted resources! We’ll navigate to them easily over the next few steps in the lab. Just click through each failed goal so that you can see the functionality of SCC!
+_Note: You don’t need to memorize the names of the impacted resources! We’ll navigate to them easily over the next few steps in the lab. Just click through each failed goal so that you can see the functionality of SCC!_
 
-Note: The names of the impacted resources in your environment may differ from the screenshots below.
+_Note: The names of the impacted resources in your environment may differ from the screenshots below._
 
-Goal ID: 3000107 – Check whether Cloud Object Storage network access is restricted to a specific IP range
+**Goal ID: 3000107 – Check whether Cloud Object Storage network access is restricted to a specific IP range**
 
 ![alt-text-here](assets/1-32.png)
 
-Goal ID: 3000441 – Check whether Virtual Private Cloud (VPC) network access control lists don’t allow ingress from 0.0.0.0/0 to SSH port
+**Goal ID: 3000441 – Check whether Virtual Private Cloud (VPC) network access control lists don’t allow ingress from 0.0.0.0/0 to SSH port**
 
 ![alt-text-here](assets/1-33.png)
 
-Goal ID: 3000445: Check whether Security Groups for VPC doesn’t allow SSH for the default security group
+**Goal ID: 3000445: Check whether Security Groups for VPC doesn’t allow SSH for the default security group**
 
 ![alt-text-here](assets/1-34.png)
 
 Now that we have an idea of some of the most critical issues in our environment that could result in security incidents or hefty fines, let’s take action and remediate these issues. 
 
-## Phase 1.2 – Remediate the IBM Cloud Environment
+## Remediate the IBM Cloud Environment (Phase 1.2)
 
-1.2.1 Remediate Goal 3000107
+### 1.2.1 Remediate Goal 3000107
 
 Let’s start by navigating to the impacted Cloud Object Storage (COS) bucket.
 
@@ -435,7 +440,7 @@ Then click on “Resource List” from the flyout menu.
 
 Under the “Storage” section down-down menu, select the Cloud Object Storage (COS) instance.
 
-Note: The “impacted” COS instance will be the only bucket that you can see!
+_Note: The “impacted” COS instance will be the only bucket that you can see!_
 
 ![alt-text-here](assets/1-37.png)
 
@@ -447,13 +452,13 @@ Navigate to the “Permissions” section of the bucket, and expand the “Firew
 
 ![alt-text-here](assets/1-39.png)
 
-Note: for the purpose of this lab, we’ll be using standard firewall rules to secure our environment. For more highly configurable routing rules, consider using Context-based restrictions. Context-based restrictions expand on traditional firewall rules and enable you to filter traffic based on IP address ranges, specific VPCs, CIDR blocks, etc.
+_Note: for the purpose of this lab, we’ll be using standard firewall rules to secure our environment. For more highly configurable routing rules, consider using Context-based restrictions. Context-based restrictions expand on traditional firewall rules and enable you to filter traffic based on IP address ranges, specific VPCs, CIDR blocks, etc._
 
 Copy your machines IP address, which you can do simply by clicking on the IP address listed in the “Firewall (legacy)” section. Then select “Add.”
 
 ![alt-text-here](assets/1-40.png)
 
-Note: You will need this IP address again later – when you do, you should simply be able to paste it again, as the IP address should remain in your machine’s clipboard until that time.
+_Note: You will need this IP address again later – when you do, you should simply be able to paste it again, as the IP address should remain in your machine’s clipboard until that time._
 
 Select “Add” again, paste the IP address into the box, and finally, click the last “Add” button.
 
@@ -463,7 +468,7 @@ Click “Save All."
 
 ![alt-text-here](assets/1-42.png)
 
-You may notice a brief message pop up in the top right of the Cloud Portal confirming this step was completed:
+_You may notice a brief message pop up in the top right of the Cloud Portal confirming this step was completed:_
 
 ![alt-text-here](assets/1-43.png)
 
@@ -473,11 +478,11 @@ Regardless, make sure your machine’s IP address is now visible in the “Firew
 
 Once it is, we’re ready to move to the next step!
 
-Note: Let’s think back briefly to what our goal requires, and what we’ve done here in this remediation step. Recall that goal 3000107 stated: “Check whether Cloud Object Storage network access is restricted to a specific IP range.” Prior to this remediation step, in theory, this bucket had no firewall rules in place, meaning that virtually anyone on the internet could have accessed its contents. Adding our machine’s IP address to the firewall rules now ensures that we’re the only people that can access the contents of this bucket, which could hold very sensitive information! 
+_Note: Let’s think back briefly to what our goal requires, and what we’ve done here in this remediation step. Recall that goal 3000107 stated: “Check whether Cloud Object Storage network access is restricted to a specific IP range.” Prior to this remediation step, in theory, this bucket had no firewall rules in place, meaning that virtually anyone on the internet could have accessed its contents. Adding our machine’s IP address to the firewall rules now ensures that we’re the only people that can access the contents of this bucket, which could hold very sensitive information!_
 
-Note: In many practical settings, adding a single IP address to the firewall rules is likely too restrictive. You may need to grant access to various individual users, CIDR blocks, or other services to ensure that all users and applications that require access to the objects can do so. We’ve simplified this for the sake of this lab by merely adding our IP address.
+_Note: In many practical settings, adding a single IP address to the firewall rules is likely too restrictive. You may need to grant access to various individual users, CIDR blocks, or other services to ensure that all users and applications that require access to the objects can do so. We’ve simplified this for the sake of this lab by merely adding our IP address._
 
-1.2.2 Remediate Goal 3000445
+### 1.2.2 Remediate Goal 3000445
 
 The next goal that we’re going to remediate is 3000445 (the third goal identified initially).
 
@@ -493,7 +498,7 @@ From the flyout menu on the left, expand “VPC Infrastructure,” then select �
 
 ![alt-text-here](assets/1-45.png)
 
-When you get to Security Groups, if you don’t see any resources, first make sure that your Region is set to your individualized Region for this lab.
+When you get to Security Groups, _if you don’t see any resources_, first make sure that your **Region** is set to _your individualized Region for this lab_.
 
 Your individualized Region for this lab will be one of the following regions: 
 -	Dallas 
@@ -502,7 +507,7 @@ Your individualized Region for this lab will be one of the following regions:
 
 Once your region is configured, then you’ll be able to see your impacted Security Group.
 
-Note: For the purposes of this lab, this impacted security group is the only security group that you’re able to see! The name of the security group and the region may differ from the screenshots below.
+_Note: For the purposes of this lab, this impacted security group is the only security group that you’re able to see! The name of the security group and the region may differ from the screenshots below._
 
 Go ahead and click on the security group:
 
@@ -518,7 +523,7 @@ Currently the security group rules are allowing anyone to attempt to Secure Shel
 
 ![alt-text-here](assets/1-48.png)
 
-Update the SSH rule to only allow your machine’s IP address to SSH.
+Update the SSH rule to only allow _your machine’s IP address_ to SSH.
 
 You’ll need to change the “Source type” to “IP Address,” then paste your IP address into the field, as shown in the screenshot below. Remember, your IP address should already be in your machine’s clipboard and ready to paste here.
 
@@ -534,22 +539,23 @@ Regardless, your updated inbound rules should look like the screenshot below, wh
 
 Great! Now we’ve made sure that our virtual server instance is only accessible via SSH from machine’s IP address, instead of from the entire internet! Even though our machine had a password and private key, you can’t be too careful. Hackers can easily crack passwords and can even decrypt keys using some advanced topics in the realm of cryptography. These topics are out of scope for today’s lab, but you should certainly research brute force password attacks and cryptography when you have some time!
 
-We need to make sure we take all precautions when protecting our resources, otherwise we could be violating industry regulations and subject to fines, or even worse, vulnerable to a breach. In today’s world, companies should be well aware of the fact that the average security exploit could cost over $4M. This has been reported by IBM, among many other leaders in cybersecurity: 
+We need to make sure we take all precautions when protecting our resources, otherwise we could be violating industry regulations and subject to fines, or even worse, vulnerable to a breach. In today’s world, companies should be well aware of the fact that **the average security exploit could cost over $4M** This has been reported by IBM, among many other leaders in cybersecurity: 
 
-https://newsroom.ibm.com/2021-07-28-IBM-Report-Cost-of-a-Data-Breach-Hits-Record-High-During-Pandemic
-https://www.ibm.com/security/data-breach
+<https://newsroom.ibm.com/2021-07-28-IBM-Report-Cost-of-a-Data-Breach-Hits-Record-High-During-Pandemic>
 
-That’s a lot more than a few pesky fines from violating governmental regulations, but regardless, the IBM Cloud Security and Compliance Center is here to help customers prevent misconfigurations that could result in tons of wasted money. How much could a misconfiguration cost your organization? Over $4M? Let’s not find out.
+<https://www.ibm.com/security/data-breach>
+
+That’s a lot more than a few pesky fines from violating governmental regulations, but regardless, the IBM Cloud Security and Compliance Center is here to help customers prevent misconfigurations that could result in tons of wasted money. How much could a misconfiguration cost your organization? Over $4M? Let’s _not_ find out.
 
 Back to our environment – updating the security group rules to deny all traffic over port 22 (except for traffic coming from our machine) is a far better security measure, and I’m sure the Security and Compliance Center will agree with us on our next scan!
 
 But first, we have one more goal to remediate. What if we had multiple virtual server instances in our Virtual Private Cloud (VPC)? Remember, updating the rules of our security group secures only the machines that are using that security group. How do we ensure all of the virtual server instances within our VPC are denying unintended and potentially malicious traffic over port 22? Let’s discuss Access Control Lists (ACLs).
 
-1.2.3 Remediate Goal 3000441
+### 1.2.3 Remediate Goal 3000441
 
 Now, let’s work on remediating the final goal of this exercise, goal 3000441. Remember that goal 3000441 was: “Check whether Virtual Private Cloud (VPC) network access control lists don’t allow ingress from 0.0.0.0/0 to SSH port.” Make note that an ACL is what defines access (incoming and outgoing traffic) for an entire VPC, which could include numerous virtual server instances depending on the defined CIDR block/number of addresses. Lastly, remember that we failed this goal on our initial scan. 
 
-Therefore, before we even look at the ACL, we know from the Security and Compliance Center that our ACL is, in fact, allowing far too much access to ALL of the resources in this VPC. To be clear, our ACL is actually allowing the entire internet to access our VPC resources!! This is what the CIDR block 0.0.0.0/0 means – our VPC is open to connections from any IP address. 
+Therefore, before we even look at the ACL, we know from the Security and Compliance Center that our ACL is, in fact, allowing far too much access to ALL of the resources in this VPC. To be clear, our ACL is actually allowing the entire internet to access our VPC resources!! This is what the CIDR block 0.0.0.0/0 means – our VPC is open to connections from _any IP address._
 
 So, how do we fix this?
 
@@ -557,17 +563,17 @@ First, navigate to Access Control Lists (ACLs).
 
 Using the flyout menu once again, expand “VPC Infrastructure,” and locate “Access Control Lists” from the list of options, as shown in the screenshot below.
 
-Note: You may not even need to use the flyout menu here if you’re still looking at your Security Groups or other parts of VPC Infrastructure!
+_Note: You may not even need to use the flyout menu here if you’re still looking at your Security Groups or other parts of VPC Infrastructure!_
 
 ![alt-text-here](assets/1-52.png)
 
-Once again, make sure that your Region is set to your individualized Region for this lab, the same Region that we noted in the previous section.
+Once again, make sure that your **Region** is set to **your individualized Region for this lab**, the same Region that we noted in the previous section.
 
 Once your region is set, you should be able to see a single ACL.
 
 Go ahead and click on this ACL!
 
-Note that your region and the name of your ACL may differ from the ones in the screenshot below.
+_Note that your region and the name of your ACL may differ from the ones in the screenshot below._
 
 ![alt-text-here](assets/1-53.png)
 
@@ -579,9 +585,9 @@ Now, under inbound rules, click the ellipses (as shown in the screenshot below),
 
 Under “Source,” select “IP or CIDR,” paste your machines IP address in the box, then click “Save” in the bottom right. 
 
-Note: Your IP address should still be in your clipboard as it was in the previous step, so try pasting it here! If the IP address was pasted accordingly, please skip over the next note just below!
+_Note: Your IP address should still be in your clipboard as it was in the previous step, so try pasting it here! If the IP address was pasted accordingly, please skip over the next note just below!_
 
-Note: If for some reason your IP address is not the last item in your clipboard, you can always navigate back to Cloud Object Storage to retrieve it. There are alternative ways to retrieve your IP address, but this may be the easiest for today’s exercise. For reference, you can navigate back to Cloud Object Storage by using the flyout menu, then selecting “Resource List,” scroll down to “Storage” and expand this section, click on this COS instance, click into the bucket again, click “Permissions,” and expand the “Firewall (legacy)” drop-down menu.
+_Note: If for some reason your IP address is not the last item in your clipboard, you can always navigate back to Cloud Object Storage to retrieve it. There are alternative ways to retrieve your IP address, but this may be the easiest for today’s exercise. For reference, you can navigate back to Cloud Object Storage by using the flyout menu, then selecting “Resource List,” scroll down to “Storage” and expand this section, click on this COS instance, click into the bucket again, click “Permissions,” and expand the “Firewall (legacy)” drop-down menu._
 
 Once again, make sure your IP address is present in the “IP or CIDR” box, as shown in the screenshot below, then click “Save.”
 
@@ -599,7 +605,7 @@ As a quick recap, what we’ve effectively done here is updated our Access Contr
 
 Let’s see!
 
-## Phase 1.3 – Rescan the IBM Cloud Environment
+## Rescan the IBM Cloud Environment (Phase 1.3)
 
 It’s time to use the Security and Compliance Center to rescan our IBM Cloud environment and to see if our remediation steps were successful in helping secure our environment. 
 
@@ -619,13 +625,13 @@ Once you click create, you’ll see that the scan has started!
 
 ![alt-text-here](assets/1-61.png)
 
-Note: For the purposes of this lab, we’ve been using “On-demand Scans.” As the name suggests, these are scans that you can manually run yourself. 
+_Note: For the purposes of this lab, we’ve been using “On-demand Scans.” As the name suggests, these are scans that you can manually run yourself._
 
-One of the great features of SCC is that you can automate this process – you can schedule scans to run on a continuous basis. This saves customers a lot of time managing manual processes involved in maintaining security and compliance measures for their organization.
+_One of the great features of SCC is that you can automate this process – you can schedule scans to run on a continuous basis. This saves customers a lot of time managing manual processes involved in maintaining security and compliance measures for their organization._
 
 This scan will take approximately 8 minutes to complete given the number of users we have in our lab. Be sure to stop and consult your instructor if you had any issues completing these steps, or if you have any questions about SCC as a whole. Otherwise, feel free to take a few moments to explore other aspects of SCC, the IBM Cloud environment that we’ve been working in today, or refresh your coffee!
 
-## Phase 1.4 – Review the Latest Scan and Evaluate Drift
+## Review the Latest Scan and Evaluate Drift (Phase 1.4)
 
 Now that the scan has completed, let’s see if we were able to improve the security posture of our environment and prepare for compliance reporting. Thinking back to SecureBank, this is a great chance to see the impact that our team new members (Kali Linux and Gene Hackman) have had in their short tenures as CISO and Lead Security Engineer. 
 
@@ -657,15 +663,15 @@ Scroll down and observe the following goals that we worked on, and click into ea
 - Goal ID: 3000441
 - Goal ID: 3000445
 
-Goal 3000107: Notice that this goal is now passing, indicated by the green ID banner and the green check mark next to the individual COS bucket. SCC was able to see that only our IP address is allowed to access this bucket, which is a great security measure to have in place. We’ve passed this goal!
+**Goal 3000107**: Notice that this goal is now passing, indicated by the green ID banner and the green check mark next to the individual COS bucket. SCC was able to see that only our IP address is allowed to access this bucket, which is a great security measure to have in place. We’ve passed this goal!
 
 ![alt-text-here](assets/1-67.png)
 
-Goal 3000441: Similarly, after updating our ACL, our SCC scan picked up on our new configuration. It knows that we are only allowing access into our VPC from our machine!
+**Goal 3000441**: Similarly, after updating our ACL, our SCC scan picked up on our new configuration. It knows that we are only allowing access into our VPC from our machine!
 
 ![alt-text-here](assets/1-68.png)
 
-Goal 3000445: Lastly, we passed this goal as well! SCC is much happier with our security group after restricting access to only our machine, as opposed to leaving it accessible by the entire internet.
+**Goal 3000445**: Lastly, we passed this goal as well! SCC is much happier with our security group after restricting access to only our machine, as opposed to leaving it accessible by the entire internet.
 
 ![alt-text-here](assets/1-69.png)
 
@@ -675,7 +681,7 @@ Finally, using the drift view in SCC, we make it easy to review how your environ
 
 Congratulations! If you’ve made it this far, you've completed the primary hands-on portion of this lab! 
 
-Take a moment to consult your instructor. Show them your Drift View from the most recent step and make sure you grab some IBM SWAG!
+### Take a moment to consult your instructor. Show them your Drift View from the most recent step and make sure you grab some IBM SWAG!**
 
 The remainder of this document is further exploration of SCC to highlight a few additional, unique features. 
 
