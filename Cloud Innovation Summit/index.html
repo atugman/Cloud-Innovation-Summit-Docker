@@ -28,8 +28,8 @@
                   feedback-link="">
     
       <google-codelab-step label="Introduction" duration="0">
-        <h2 is-upgraded>HANDS-ON LAB:</h2>
-<h2 is-upgraded>IBM CLOUD SECURITY AND COMPLIANCE CENTER</h2>
+        <h2 is-upgraded>IBM CLOUD SECURITY AND COMPLIANCE CENTER</h2>
+<h2 is-upgraded>HANDS-ON LAB:</h2>
 <h2 is-upgraded>IBM CLOUD INNOVATION SUMMIT</h2>
 <h2 is-upgraded>OCTOBER 12TH, 2022</h2>
 <p><em>Welcome to the Security and Compliance Center hands-on lab! Today, you&#39;ll have a chance to work with a live IBM Cloud environment and illustrate the functionality of the IBM Cloud Security and Compliance Center.</em></p>
@@ -37,30 +37,34 @@
 <p>We&#39;ll start with a brief overview of SCC (Phase 0), then we&#39;ll scan an IBM Cloud environment (Phase 1). This will give us a compliance score, and will identify portions of our environment that are either vulnerable from a security perspective, or non-compliant and leaving us susceptible to fines (Phase 1.1).</p>
 <p>Then, we&#39;ll make improvements (remediate) and changes to our environment to improve our security and compliance posture (Phase 1.2). We&#39;ll rescan the environment through SCC (Phase 1.3) and see how much we were able to improve (1.4).</p>
 <p>Lastly, we&#39;ll review existing Azure scans (Phase 2) and IBM Cloud Satellite scans (Phase 3) to learn about different types of environments SCC is capable of scanning. Finally, we&#39;ll wrap everything up and discuss next steps (Phase 4).</p>
-<p>Let&#39;s get started!</p>
+<h2 is-upgraded>Let&#39;s get started!</h2>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Phase 0 - Meet the Customer: SecureBank, Ltd" duration="0">
-        <p>Throughout this lab, we&#39;ll make reference to a fictitious customer, SecureBank, Ltd. SecureBank is a local bank that strives to provide a modern and unique experience to their customers. They may be small, but they they&#39;re ambitious, and they have lofty goals when it comes to testing and releasing new software in the form of new features for their customers. They&#39;re in the process of modernizing some of their key software applications, including their main mobile banking application, used by the vast majority of their customers.</p>
+      <google-codelab-step label="Meet the Customer: SecureBank, Ltd (Phase 0)" duration="0">
+        <p>Throughout this lab, we&#39;ll make reference to a fictitious customer, <strong><em>SecureBank, Ltd</em></strong>. SecureBank is a local bank that strives to provide a modern and unique experience to their customers. They may be small, but they they&#39;re ambitious, and they have lofty goals when it comes to testing and releasing new software in the form of new features for their customers. They&#39;re in the process of modernizing some of their key software applications, including their main mobile banking application, used by the vast majority of their customers.</p>
 <p>Like most banks, insurance companies, and other financial institutions, they are subject to various compliance regulations and are audited regularly. However, when it comes to maintaining their security posture and security configurations in their Cloud environments, they tend to take a laissez faire approach. Their engineering and development teams are focused on releasing new features and security is typically a lower priority. They&#39;ve hired top application developers and DevOps engineers, but their skillsets in the realm of security are lackluster.</p>
 <p>Recently, they&#39;ve been subject to some hefty fines from the SEC for a lack of compliance for several controls. SecureBank recently hired a new Chief Information Security Officer (CISO), as well as a new Lead Security Engineer whose primary goal is to embark on a holistic review of the security configurations in their Cloud infrastructure and make sure everything is up to code, so to speak.</p>
-<p><img alt="alt-text-here" src="img/b475df197388191b.png"> Kali Linux, Chief Information Security Officer (CISO)</p>
-<p><img alt="alt-text-here" src="img/1efc2aa00778dfed.png"> Gene Hackman, Lead Security Engineer</p>
+<p class="image-container"><img alt="alt-text-here" src="img/a1365a054d18dc79.png"></p>
+<pre><code>                  Kali Linux, Chief Information Security Officer (CISO)
+</code></pre>
+<p class="image-container"><img alt="alt-text-here" src="img/984acce93abd420d.png"></p>
+<pre><code>                        Gene Hackman, Lead Security Engineer
+</code></pre>
 <p>To help them maintain and evaluate their security posture to avoid future fines, SecureBank has begun evaluating the IBM Cloud Security and Compliance Center. They&#39;ve started off by conducting preliminary research, exploration, and solidifying their understanding of key SCC concepts.</p>
-<p>Let&#39;s join them!</p>
+<h2 is-upgraded>Let&#39;s join them!</h2>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Phase 0.1 – Explore the Architecture and the Security and Compliance Center" duration="0">
-        <h2 is-upgraded>IBM Cloud Security and Compliance Center: Overview and Key Definitions</h2>
+      <google-codelab-step label="Explore the Architecture and the Security and Compliance Center (Phase 0.1)" duration="0">
+        <h2 is-upgraded>Overview and Key Definitions</h2>
 <p>The IBM Cloud Security and Compliance Center (SCC) helps customers like SecureBank achieve continuous security and compliance of their on-premises and Cloud resources (including IBM Cloud, Azure, AWS, and GCP). SCC helps prevent misconfigurations in their environments that could result in significant fines stemming from violating government regulations. In today&#39;s world, security threats are constantly changing, and SCC could very well help SecureBank mitigate incoming security threats by ensuring their environment adheres to key security configurations.</p>
 <h2 is-upgraded>Collector:</h2>
 <p>Think of a collector as the machine executing the scan of your environment. It&#39;s effectively a computer executing the program that compares your environment against a set of controls, and outputs the compliance report.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/658e6df1a71e0b2b.png"></p>
-<p>Reference: https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-collector</p>
+<p>Reference: <a href="https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-collector" target="_blank">https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-collector</a></p>
 <h2 is-upgraded>Credentials:</h2>
 <p>The collector requires authorization to access your resources and run its validations. Configuring credentials accomplishes exactly this. For IBM Cloud scans, this is simply an API key.</p>
 <h2 is-upgraded>Scope:</h2>
@@ -79,9 +83,9 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Phase 0.2 – Confirm Your Resource Group" duration="0">
+      <google-codelab-step label="Confirm Your Resource Group (Phase 0.2)" duration="0">
         <p>SecureBank took a step further and worked with their IBM account team to setup a Cloud sandbox where they could start to gain hands-on experience with the IBM Cloud Security and Compliance Center. We&#39;re going to do the same thing here today!</p>
-<p>To start the lab, your web browser should already be logged into the IBM Cloud portal: https://cloud.ibm.com.</p>
+<p>To start the lab, your web browser should already be logged into the IBM Cloud portal: <a href="https://cloud.ibm.com" target="_blank">https://cloud.ibm.com</a>.</p>
 <p>If for some reason this isn&#39;t the case, go ahead and navigate to the link above and notify your instructor who will provide you with login credentials and help you get setup to start the lab.</p>
 <p>The first piece of information that we need to complete this lab is our unique resource group. We&#39;ll reference this resource group a few times throughout the lab. A resource group is a logical grouping of resources into a virtual &#34;bucket&#34; to make it easier to manage our resources. We&#39;ll talk a bit more about resource groups later on, but for now, you need to make sure you know which resource group you&#39;ll be using for today&#39;s lab.</p>
 <p>To confirm your resource group, in the top left of the IBM Cloud Portal, click on the following icon to use the flyout menu:</p>
@@ -105,7 +109,7 @@
 </ul>
 </li>
 </ul>
-<p>For right now, take note of the resource group that these resources are located in. Your resource group will be named something like: &#34;rg&#34; and a number between 1 and 30. For example, the resource group in the screenshot below is named &#34;rg30&#34; – make sure you remember your resource group name for a couple of the steps in this lab!</p>
+<p>For right now, <strong>take note of the resource group that these resources are located in.</strong> Your resource group will be named something like: &#34;rg&#34; and a number between 1 and 30. For example, the resource group in the screenshot below is named &#34;rg30&#34; – make sure you remember your resource group name for a couple of the steps in this lab!</p>
 <p class="image-container"><img alt="alt-text-here" src="img/fe0ba0e97e6bf549.png"></p>
 <p>If you forget your resource group at any point, you can navigate back to the &#34;Resource List,&#34; or you can quickly click on the icon in the top right to reference your username, which will correspond to your resource group name!</p>
 <p>For example, &#34;lab user30&#34; is the user account in the screenshot below, and lab user30&#39;s resource group is &#34;rg30.&#34; We&#39;ve created a unique user for your, and the number in your username corresponds to your resource group name as well.</p>
@@ -114,13 +118,13 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Phase 0.3 – Navigate to the Security and Compliance Center and Explore" duration="0">
+      <google-codelab-step label="Navigate to the Security and Compliance Center and Explore (Phase 0.3)" duration="0">
         <p>Now, let&#39;s navigate to the Security and Compliance Center, which can be accomplished a few different ways. We&#39;ll simply select &#34;Security and Compliance&#34; from the flyout menu on the left side of the Cloud portal:</p>
-<p>Click this icon to open the flyout menu:</p>
+<p><em>Click this icon to open the flyout menu:</em></p>
 <p class="image-container"><img alt="alt-text-here" src="img/c98dc1fb45c28668.png"></p>
-<p>Then select &#34;Security and Compliance:&#34;</p>
+<p><em>Then select &#34;Security and Compliance:&#34;</em></p>
 <p class="image-container"><img alt="alt-text-here" src="img/88465b9b16dd53b0.png"></p>
-<p>Take a moment to familiarize yourself with the SCC navigation pane on the left side of your screen. Feel free explore the &#34;Dashboard&#34; option. Your dashboard may initially have less data than the screenshot below!</p>
+<h2 is-upgraded>Take a moment to familiarize yourself with the SCC navigation pane on the left side of your screen. Feel free explore the &#34;Dashboard&#34; option. Your dashboard may initially have less data than the screenshot below!</h2>
 <p class="image-container"><img alt="alt-text-here" src="img/3fe65d569498580.png"></p>
 
 
@@ -475,7 +479,7 @@
 <p class="image-container"><img alt="alt-text-here" src="img/34c6a6a8fc3d98ac.png"></p>
 <p>Explore the scan at your leisure. In the screenshots below, we&#39;ll hone in on the failed control, and the associated goals.</p>
 <p class="image-container"><img alt="alt-text-here" src="img/1520eb2c36a76c5.png"><img alt="alt-text-here" src="img/3c1134b3fc0a4e60.png"><img alt="alt-text-here" src="img/67321596f493ac1d.png"></p>
-<p>Well, it&#39;s safe to say that SecureBank&#39;s new CISO Kali Linux, and new Lead Security Engineer Gene Hackman can sleep easy at night now, knowing that the IBM Cloud Security and Compliance Center is continually assessing their Multi-Cloud environments and modern architectures that are helping them deliver software faster and stay differentiated in the market. Through a single pane of glass, SecureBank can assess and improve on their Cloud security configurations to help secure their environments and prevent fines! All while focusing on results for their business and saving the time and effort that would have been required to build out these sorts of security validations manually.</p>
+<p>Well, it&#39;s safe to say that SecureBank&#39;s new CISO Kali Linux, and new Lead Security Engineer Gene Hackman can sleep easy now, knowing that the IBM Cloud Security and Compliance Center is continually assessing their Multi-Cloud environments and modern architectures that are helping them deliver software faster and stay differentiated in the market. Through a single pane of glass, SecureBank can assess and improve on their Cloud security configurations to help secure their environments and prevent fines! All while focusing on results for their business and saving the time and effort that would have been required to build out these sorts of security validations manually.</p>
 
 
       </google-codelab-step>
