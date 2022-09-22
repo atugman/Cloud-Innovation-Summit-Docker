@@ -165,7 +165,7 @@ You’ll notice that you have access to your own:
 -	Other VPC resources
     - Including a Network Security Group, and Access Control List, which we’ll talk about more later.
 
-For right now, **take note of the resource group that these resources are located in.** Your resource group will be named something like: “rg” and a number between 1 and 30. For example, the resource group in the screenshot below is named “rg30” -- make sure you remember your resource group name for a couple of the steps in this lab!
+For right now, **take note of the resource group that these resources are located in**, as well as the **Region**. Your resource group will be named something like: “rg” and a number between 1 and 30. For example, the resource group in the screenshot below is named “rg30” -- make sure you remember your resource group name for a couple of the steps in this lab!
 
 ![alt-text-here](assets/phase0.1-3.png)
 
@@ -589,7 +589,7 @@ _Note: Your IP address should still be in your clipboard as it was in the previo
 
 _Note: If for some reason your IP address is not the last item in your clipboard, you can always navigate back to Cloud Object Storage to retrieve it. There are alternative ways to retrieve your IP address, but this may be the easiest for today’s exercise. For reference, you can navigate back to Cloud Object Storage by using the flyout menu, then selecting “Resource List,” scroll down to “Storage” and expand this section, click on this COS instance, click into the bucket again, click “Permissions,” and expand the “Firewall (legacy)” drop-down menu._
 
-Once again, make sure your IP address is present in the “IP or CIDR” box, as shown in the screenshot below, then click “Save.”
+Once again, make sure your IP address is present in the Source “IP or CIDR” box, as shown in the screenshot below, then click “Save.”
 
 ![alt-text-here](assets/1-55.png)
 
